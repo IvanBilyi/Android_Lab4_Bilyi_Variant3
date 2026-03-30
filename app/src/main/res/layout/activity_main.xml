@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="1. Вибір з пристрою:" android:textStyle="bold" android:layout_marginBottom="4dp"/>
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+            <Button android:id="@+id/btnPickVideo" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Обрати Відео" android:layout_marginEnd="4dp"/>
+            <Button android:id="@+id/btnPickAudio" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Обрати Аудіо" android:layout_marginStart="4dp"/>
+        </LinearLayout>
+
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="2. Відтворення з Інтернету:" android:textStyle="bold" android:layout_marginTop="12dp" android:layout_marginBottom="4dp"/>
+        <EditText android:id="@+id/urlEditText" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="Введіть URL (.mp4 або .mp3)" android:inputType="textUri"/>
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+            <Button android:id="@+id/btnPlayVideoUrl" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Відео з URL" android:layout_marginEnd="4dp"/>
+            <Button android:id="@+id/btnPlayAudioUrl" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Аудіо з URL" android:layout_marginStart="4dp"/>
+        </LinearLayout>
+
+        <View android:layout_width="match_parent" android:layout_height="2dp" android:background="#E0E0E0" android:layout_marginVertical="16dp"/>
+
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Керування аудіо плеєром:" android:textStyle="bold"/>
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center" android:layout_marginTop="8dp">
+            <Button android:id="@+id/btnPlay" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Play" />
+            <Button android:id="@+id/btnPause" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Pause" android:layout_marginHorizontal="8dp"/>
+            <Button android:id="@+id/btnStop" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Stop" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/audioInfoLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            android:background="#F5F5F5"
+            android:padding="8dp"
+            android:layout_marginTop="16dp">
+
+            <ImageView
+                android:id="@+id/albumArtImageView"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="#DDDDDD"
+                android:scaleType="centerCrop" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginStart="12dp"
+                android:gravity="center_vertical">
+
+                <TextView android:id="@+id/tvTitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Назва:" android:textStyle="bold" android:textSize="16sp"/>
+                <TextView android:id="@+id/tvArtist" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Виконавець:"/>
+                <TextView android:id="@+id/tvAlbum" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Альбом:"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/videoContainer"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_marginTop="16dp"
+            android:background="#000000"
+            android:visibility="gone">
+
+            <VideoView android:id="@+id/videoView" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_gravity="center" />
+        </FrameLayout>
+
+    </LinearLayout>
+</ScrollView>
